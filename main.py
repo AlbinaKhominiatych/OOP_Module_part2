@@ -1,12 +1,15 @@
-# перевантаження методів
-class StringManipulator:
-    def concatenate(self, a, b):
-        return a + b
+# перевантаження операторів
+class ComplexNumber:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
 
-    def concatenate(self, a, b):
-        return str(a) + str(b)
+    def __add__(self, other):
+        return ComplexNumber(self.real + other.real, self.imag + other.imag)
 
 
-calc = StringManipulator()
-print(calc.concatenate(2, 3))
-print(calc.concatenate("2", "3"))
+num1 = ComplexNumber(1, 2)
+num2 = ComplexNumber(3, 4)
+
+result = num1 + num2
+print(result)
